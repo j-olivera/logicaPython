@@ -28,21 +28,22 @@ def ordBurbuja(arreglo,longitud):
                 arreglo[j+1]=arreglo[j]
                 arreglo[j]=aux
 def busquedaBinaria(arreglo,valor):
-    izq = 0
-    der = 0
-    encontrado = False
-    while(izq<=der and encontrado==False):
-        medio=(izq+der)//2
-        if(arreglo[medio]==valor):
-            encontrado = True
+    izq=0
+    der= len(arreglo)
+    encontrado=False
+
+    while izq<=der and encontrado==False:
+        medio=izq+der//2
+        if arreglo[medio]==valor:
+            encontrado=True
         elif(arreglo[medio]<valor):
             izq=medio+1
         else:
             der=medio-1
     if(encontrado==True):
-        print(f"El valor esta en la posicion {medio} ")
+        print(f"Valor encontrado en la posicion {medio+1}")
     else:
-        print("El valor no esta en el arreglo")
+        print("Valor no encontrado")
 def arreglo_a_matriz(matriz,filas,columnas,arreglo):
     indice=0
     for i in range(filas):
